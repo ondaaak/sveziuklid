@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="page-shell">
+    <div class="page-shell" id="top">
         <header class="topbar" id="uvod">
-            <a class="brand" href="#uvod" aria-label="Svěží Úklid">
+            <a class="brand" href="#top" aria-label="Svěží Úklid">
                 <img src="logo.svg" alt="Logo Svěží Úklid">
                 <span class="brand-text">
                     <strong>Svěží Úklid</strong>
@@ -30,24 +30,33 @@
             </button>
 
             <nav class="nav" id="primary-nav" aria-label="Hlavní navigace">
-                <a href="#sluzby">Služby</a>
+                <a href="#cenik">Ceník</a>
                 <a href="#galerie">Galerie</a>
                 <a href="#kontakt">Kontakt</a>
-                <a class="nav-instagram" href="https://www.instagram.com/sveziuklid/" target="_blank" rel="noreferrer">Instagram</a>
+                <a class="nav-instagram" href="https://www.instagram.com/sveziuklid/" target="_blank" rel="noreferrer" aria-label="Instagram Svěží Úklid">
+                    <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="instagramNavGradient" x1="3" y1="21" x2="21" y2="3" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#feda75"></stop>
+                                <stop offset="0.28" stop-color="#fa7e1e"></stop>
+                                <stop offset="0.5" stop-color="#d62976"></stop>
+                                <stop offset="0.78" stop-color="#962fbf"></stop>
+                                <stop offset="1" stop-color="#4f5bd5"></stop>
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#instagramNavGradient)" d="M7.5 2H16.5C19.5376 2 22 4.46243 22 7.5V16.5C22 19.5376 19.5376 22 16.5 22H7.5C4.46243 22 2 19.5376 2 16.5V7.5C2 4.46243 4.46243 2 7.5 2ZM7.5 4C5.567 4 4 5.567 4 7.5V16.5C4 18.433 5.567 20 7.5 20H16.5C18.433 20 20 18.433 20 16.5V7.5C20 5.567 18.433 4 16.5 4H7.5ZM17.25 5.5C17.9404 5.5 18.5 6.05964 18.5 6.75C18.5 7.44036 17.9404 8 17.25 8C16.5596 8 16 7.44036 16 6.75C16 6.05964 16.5596 5.5 17.25 5.5ZM12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z"></path>
+                    </svg>
+                </a>
             </nav>
         </header>
 
         <main>
             <section class="hero section-card">
                 <div class="hero-copy">
-                    <p class="eyebrow">Profesionální služby</p>
-                    <h1>Čisté sedačky, koberce i venkovní plochy v lehkém a svěžím stylu.</h1>
-                    <p class="lead">
-                        Pomáháme domácnostem i firmám vrátit interiéru i exteriéru čistotu, svěžest a reprezentativní vzhled.
-                        Pracujeme pečlivě, šetrně a s výsledkem, který je opravdu vidět.
-                    </p>
+                   
+                    <h1>Čištění s úsměvem.</h1>
                     <div class="hero-actions">
-                        <a class="button button-primary" href="#kontakt">Nezávazná poptávka</a>
+                        <a class="button button-primary" href="#kontaktujte-nas">Nezávazná poptávka</a>
                         <a class="button button-secondary" href="#galerie">Zobrazit galerii</a>
                     </div>
 
@@ -73,81 +82,63 @@
                 </div>
             </section>
 
-            <section class="trust-bar">
-                <div>
-                    <span class="trust-label">Telefon</span>
-                    <a href="tel:+420730674717">+420 730 674 717</a>
-                </div>
-                <div>
-                    <span class="trust-label">Web</span>
-                    <a href="https://svezi-uklid.cz" target="_blank" rel="noreferrer">svezi-uklid.cz</a>
-                </div>
-                <div>
-                    <span class="trust-label">Dostupnost</span>
-                    <p>Domácnosti, firmy i venkovní prostory</p>
-                </div>
-            </section>
-
-            <section class="services section-card" id="sluzby">
+            <section class="services section-card" id="cenik">
                 <div class="section-heading">
-                    <p class="eyebrow">Naše služby</p>
-                    <h2>Služby, které navazují na vizuál plakátu, ale fungují jako moderní web.</h2>
+                    <p class="eyebrow">Ceník</p>
+                    <h2>Orientační ceny pro hlavní typy čištění.</h2>
                     <p>
-                        Web je postavený ve světlých tónech modré, bílé a jemného tyrkysu, aby působil čistě, lehce a důvěryhodně.
+                        Ceny jsou orientační a mohou se lišit podle velikosti plochy a míry znečištění.
                     </p>
                 </div>
 
                 <div class="service-grid">
-                    <article class="service-card">
-                        <div class="service-icon">01</div>
-                        <h3>Hloubkové čištění sedaček</h3>
-                        <p>Odstranění běžných nečistot, osvěžení textilu a navrácení čistého vzhledu sedacím soupravám.</p>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-icon">02</div>
-                        <h3>Čištění koberců</h3>
-                        <p>Šetrné a důkladné čištění koberců v domácnostech i kancelářských prostorech.</p>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-icon">03</div>
-                        <h3>Tlakové mytí dlažeb</h3>
-                        <p>Vyčištění chodníků, teras, příjezdových cest a dalších venkovních ploch s výrazným efektem.</p>
+                    <article class="service-card accent-card">
+                        <h3>Čištění sedací soupravy</h3>
+                        <p>Cena: dle domluvy</p>
                     </article>
                     <article class="service-card accent-card">
-                        <div class="service-icon">04</div>
-                        <h3>Individuální domluva</h3>
-                        <p>Každou zakázku řešíme osobně. Připravíme doporučení i termín podle typu povrchu a rozsahu práce.</p>
+                        <h3>Hloubkové čištění koberců</h3>
+                        <p>Cena: dle domluvy</p>
                     </article>
-                </div>
-            </section>
-
-            <section class="parallax-strip" aria-label="Dekorativní pozadí">
-                <div class="parallax-overlay">
-                    <p>Lehký pohyb pozadí při scrollování připomíná vodu, čistotu a svěžest.</p>
+                    <article class="service-card accent-card">
+                        <h3>Tlakové mytí dlažeb</h3>
+                        <p>Cena: dle domluvy</p>
+                    </article>
                 </div>
             </section>
 
             <section class="gallery section-card" id="galerie">
                 <div class="section-heading">
                     <p class="eyebrow">Galerie</p>
-                    <h2>Ukázky stylizované podle vašich služeb.</h2>
-                    <p>
-                        Pokud nám dodáte vlastní fotografie realizací, lze tuto část velmi jednoduše nahradit reálnými ukázkami před a po čištění.
-                    </p>
+                    <h2>Provedené práce</h2>
                 </div>
 
-                <div class="gallery-grid">
-                    <article class="gallery-card gallery-sofa">
-                        <span>Čištění čalounění</span>
-                    </article>
-                    <article class="gallery-card gallery-carpet">
-                        <span>Oživení koberců</span>
-                    </article>
-                    <article class="gallery-card gallery-exterior">
-                        <span>Venkovní plochy</span>
-                    </article>
+                <div class="gallery-carousel" data-carousel>
+                    <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Předchozí fotografie">&lsaquo;</button>
+                    <div class="gallery-stage">
+                        <figure class="gallery-slide is-active" data-slide>
+                            <img src="image1.jpg" alt="Ukázka čištění 1">
+                        </figure>
+                        <figure class="gallery-slide" data-slide>
+                            <img src="image2.webp" alt="Ukázka čištění 2">
+                        </figure>
+                    </div>
+                    <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Další fotografie">&rsaquo;</button>
+                    <div class="gallery-dots" aria-label="Přepínání galerie">
+                        <button class="gallery-dot is-active" type="button" aria-label="Zobrazit fotografii 1" data-dot="0"></button>
+                        <button class="gallery-dot" type="button" aria-label="Zobrazit fotografii 2" data-dot="1"></button>
+                    </div>
                 </div>
             </section>
+
+            <div class="gallery-modal" data-gallery-modal hidden>
+                <button class="gallery-modal-close" type="button" aria-label="Zavřít galerii">×</button>
+                <button class="gallery-modal-arrow gallery-modal-prev" type="button" aria-label="Předchozí fotografie">&lsaquo;</button>
+                <div class="gallery-modal-content">
+                    <img src="image1.jpg" alt="Ukázka čištění ve zvětšení" data-gallery-modal-image>
+                </div>
+                <button class="gallery-modal-arrow gallery-modal-next" type="button" aria-label="Další fotografie">&rsaquo;</button>
+            </div>
 
             <section class="contact section-card" id="kontakt">
                 <div class="contact-content">
@@ -200,7 +191,16 @@
                         <strong class="instagram-strong">
                             <span class="instagram-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" role="img" focusable="false">
-                                    <path d="M7.5 2H16.5C19.5376 2 22 4.46243 22 7.5V16.5C22 19.5376 19.5376 22 16.5 22H7.5C4.46243 22 2 19.5376 2 16.5V7.5C2 4.46243 4.46243 2 7.5 2ZM7.5 4C5.567 4 4 5.567 4 7.5V16.5C4 18.433 5.567 20 7.5 20H16.5C18.433 20 20 18.433 20 16.5V7.5C20 5.567 18.433 4 16.5 4H7.5ZM17.25 5.5C17.9404 5.5 18.5 6.05964 18.5 6.75C18.5 7.44036 17.9404 8 17.25 8C16.5596 8 16 7.44036 16 6.75C16 6.05964 16.5596 5.5 17.25 5.5ZM12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z"/>
+                                    <defs>
+                                        <linearGradient id="instagramGradient" x1="3" y1="21" x2="21" y2="3" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#feda75"></stop>
+                                            <stop offset="0.28" stop-color="#fa7e1e"></stop>
+                                            <stop offset="0.5" stop-color="#d62976"></stop>
+                                            <stop offset="0.78" stop-color="#962fbf"></stop>
+                                            <stop offset="1" stop-color="#4f5bd5"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path fill="url(#instagramGradient)" d="M7.5 2H16.5C19.5376 2 22 4.46243 22 7.5V16.5C22 19.5376 19.5376 22 16.5 22H7.5C4.46243 22 2 19.5376 2 16.5V7.5C2 4.46243 4.46243 2 7.5 2ZM7.5 4C5.567 4 4 5.567 4 7.5V16.5C4 18.433 5.567 20 7.5 20H16.5C18.433 20 20 18.433 20 16.5V7.5C20 5.567 18.433 4 16.5 4H7.5ZM17.25 5.5C17.9404 5.5 18.5 6.05964 18.5 6.75C18.5 7.44036 17.9404 8 17.25 8C16.5596 8 16 7.44036 16 6.75C16 6.05964 16.5596 5.5 17.25 5.5ZM12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z"></path>
                                 </svg>
                             </span>
                             @sveziuklid
@@ -208,20 +208,43 @@
                     </a>
                 </div>
             </section>
+
+            <section class="contact-form-section section-card" id="kontaktujte-nas">
+                <div class="section-heading">
+                    <p class="eyebrow">Máte dotaz?</p>
+                    <h2>Napište nám.</h2>
+                </div>
+                <p class="form-success" id="form-success" hidden>Děkujeme, zpráva byla úspěšně odeslána. Ozveme se vám co nejdříve.</p>
+                <form class="contact-form" action="https://formsubmit.co/ondaaak@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Nová poptávka z webu Svěží Úklid">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" id="form-next" value="">
+                    <label class="form-field">
+                        <span>Jméno</span>
+                        <input type="text" name="Jméno" placeholder="Vaše jméno" required>
+                    </label>
+                    <label class="form-field">
+                        <span>E-mail</span>
+                        <input type="email" name="E-mail" placeholder="vas@email.cz" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Telefon</span>
+                        <input type="tel" name="Telefon" placeholder="+420 123 456 789">
+                    </label>
+                    <label class="form-field form-field-wide">
+                        <span>Zpráva</span>
+                        <textarea name="Zpráva" rows="6" placeholder="Napište, s čím potřebujete pomoci." required></textarea>
+                    </label>
+                    <button class="button button-primary" type="submit">Odeslat poptávku</button>
+                </form>
+            </section>
         </main>
 
-        <footer class="footer">
-            <div>
-                <strong>Svěží Úklid</strong>
-                <p>Čištění s úsměvem pro interiéry i exteriéry.</p>
-            </div>
-            <nav class="footer-nav" aria-label="Patička">
-                <a href="#uvod">Nahoru</a>
-                <a href="#sluzby">Služby</a>
-                <a href="#galerie">Galerie</a>
-                <a href="https://www.instagram.com/sveziuklid/" target="_blank" rel="noreferrer">Instagram</a>
-            </nav>
-        </footer>
+        <div class="site-signature" aria-label="Podpis webu">
+            <img src="logo.svg" alt="Logo Svěží Úklid">
+            <p>Svěží Úklid <span id="current-year">2026</span></p>
+        </div>
     </div>
 
     <script src="script.js"></script>
