@@ -1,0 +1,20 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="roof" x1="18" y1="16" x2="112" y2="106" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FD7EE"/>
+      <stop offset="1" stop-color="#2474C7"/>
+    </linearGradient>
+    <linearGradient id="smile" x1="39" y1="67" x2="89" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2474C7"/>
+      <stop offset="1" stop-color="#0A5CB2"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="32" fill="#F3FAFF"/>
+  <path d="M22 53L64 23L106 53" stroke="url(#roof)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 54V89H94V54" stroke="url(#roof)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="54" cy="59" r="5" fill="#2474C7"/>
+  <circle cx="74" cy="59" r="5" fill="#2474C7"/>
+  <path d="M48 71Q64 81 80 71" stroke="url(#smile)" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <circle cx="103" cy="28" r="7" fill="#7FD7EE" fill-opacity="0.65"/>
+  <circle cx="94" cy="17" r="4" fill="#2474C7" fill-opacity="0.18"/>
+</svg>
