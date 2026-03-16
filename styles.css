@@ -387,14 +387,14 @@ main {
     background-position: center;
 }
 
-.detail-facade::before {
+.detail-roof::before {
     background:
         linear-gradient(180deg, rgba(18, 72, 118, 0.08), rgba(12, 54, 97, 0.18)),
         linear-gradient(160deg, rgba(255, 255, 255, 0.26), transparent 30%);
 }
 
-.detail-facade {
-    background-image: url("fasada.png");
+.detail-roof {
+    background-image: url("strecha.jpg");
     background-position: center;
 }
 
@@ -464,7 +464,7 @@ main {
 }
 
 .service-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .service-card {
