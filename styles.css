@@ -502,6 +502,34 @@ main {
     margin: 0;
 }
 
+.service-price-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 8px;
+    color: var(--text);
+    font-size: 1.01rem;
+    line-height: 1.5;
+}
+
+.service-note {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.55;
+}
+
+.service-note-strong {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.service-summary {
+    margin: 6px 0 0;
+    color: var(--primary-strong);
+    font-weight: 800;
+}
+
 .accent-card {
     background: linear-gradient(180deg, rgba(236, 249, 255, 0.95), rgba(255, 255, 255, 0.86));
 }
