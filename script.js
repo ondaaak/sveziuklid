@@ -9,6 +9,7 @@ const galleryModalNext = document.querySelector('.gallery-modal-next');
 const galleryModalClose = document.querySelector('.gallery-modal-close');
 const formNext = document.querySelector('#form-next');
 const formSuccess = document.querySelector('#form-success');
+const facebookLinks = document.querySelectorAll('.facebook-link[data-facebook-id]');
 
 let modalSlides = [];
 let modalIndex = 0;
@@ -52,6 +53,38 @@ if (formSuccess) {
     if (params.get('odeslano') === '1') {
         formSuccess.hidden = false;
     }
+}
+
+if (facebookLinks.length) {
+    const isIOSDevice = /iPhone|iPad|iPod/.test(window.navigator.userAgent)
+        || (window.navigator.platform === 'MacIntel' && window.navigator.maxTouchPoints > 1);
+
+    facebookLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            if (!isIOSDevice) {
+                return;
+            }
+
+            const profileId = link.getAttribute('data-facebook-id');
+            const webUrl = link.href;
+
+            if (!profileId || !webUrl) {
+                return;
+            }
+
+            event.preventDefault();
+
+            const fallbackTimer = window.setTimeout(() => {
+                window.location.href = webUrl;
+            }, 900);
+
+            window.addEventListener('pagehide', () => {
+                window.clearTimeout(fallbackTimer);
+            }, { once: true });
+
+            window.location.href = `fb://profile/${profileId}`;
+        });
+    });
 }
 
 carousels.forEach((carousel) => {
