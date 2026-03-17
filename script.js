@@ -21,6 +21,14 @@ if (menuToggle && nav) {
 
     nav.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
+            const href = link.getAttribute('href') || '';
+            const opensInNewTab = link.getAttribute('target') === '_blank';
+
+            // Keep mobile menu state for external links; iOS can ignore first tap otherwise.
+            if (opensInNewTab || !href.startsWith('#')) {
+                return;
+            }
+
             nav.classList.remove('is-open');
             menuToggle.setAttribute('aria-expanded', 'false');
         });
