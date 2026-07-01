@@ -29,7 +29,8 @@ html {
 #cenik,
 #galerie,
 #kontakt,
-#kontaktujte-nas {
+#kontaktujte-nas,
+#hodinovy-manzel {
     scroll-margin-top: var(--nav-offset);
 }
 
@@ -365,15 +366,28 @@ main {
     background-position: center;
 }
 
-.detail-carpet::before {
-    background:
-        linear-gradient(180deg, rgba(18, 72, 118, 0.06), rgba(12, 54, 97, 0.18)),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 35%);
+.detail-handyman {
+    background-image: url("hodinovy-manzel.jpeg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
-.detail-carpet {
-    background-image: url("koberce.png");
-    background-position: center;
+.detail-handyman::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(18, 72, 118, 0.08), rgba(12, 54, 97, 0.18)),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.26), transparent 30%);
+}
+
+.detail-handyman .visual-label {
+    background: rgba(255, 255, 255, 0.88);
+}
+
+.handyman-hero-icon {
+    display: none;
 }
 
 .detail-pressure::before {
@@ -537,6 +551,13 @@ main {
 /* ══════════════════════════════════
    Hodinový manžel
    ══════════════════════════════════ */
+
+.handyman-section {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
 
 .handyman {
     display: grid;
