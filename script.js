@@ -164,3 +164,21 @@ if (galleryModal && galleryModalImage && galleryModalPrev && galleryModalNext &&
         }
     });
 }
+
+const compareCards = document.querySelectorAll('[data-compare]');
+
+compareCards.forEach((card) => {
+    const range = card.querySelector('.ba-range');
+
+    if (!range) {
+        return;
+    }
+
+    const renderPosition = () => {
+        card.style.setProperty('--pos', `${range.value}%`);
+    };
+
+    range.addEventListener('input', renderPosition);
+    range.addEventListener('change', renderPosition);
+    renderPosition();
+});
