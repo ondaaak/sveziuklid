@@ -1,17 +1,8 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 const currentYear = document.querySelector('#current-year');
-const carousels = document.querySelectorAll('[data-carousel]');
-const galleryModal = document.querySelector('[data-gallery-modal]');
-const galleryModalImage = document.querySelector('[data-gallery-modal-image]');
-const galleryModalPrev = document.querySelector('.gallery-modal-prev');
-const galleryModalNext = document.querySelector('.gallery-modal-next');
-const galleryModalClose = document.querySelector('.gallery-modal-close');
 const formNext = document.querySelector('#form-next');
 const formSuccess = document.querySelector('#form-success');
-
-let modalSlides = [];
-let modalIndex = 0;
 
 if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
@@ -54,117 +45,6 @@ if (formSuccess) {
     }
 }
 
-carousels.forEach((carousel) => {
-    const slides = carousel.querySelectorAll('[data-slide]');
-    const dots = carousel.querySelectorAll('[data-dot]');
-    const prevButton = carousel.querySelector('.gallery-arrow-prev');
-    const nextButton = carousel.querySelector('.gallery-arrow-next');
-
-    if (!slides.length || !dots.length || !prevButton || !nextButton) {
-        return;
-    }
-
-    let activeIndex = 0;
-
-    const renderSlide = (index) => {
-        activeIndex = (index + slides.length) % slides.length;
-
-        slides.forEach((slide, slideIndex) => {
-            slide.classList.toggle('is-active', slideIndex === activeIndex);
-        });
-
-        dots.forEach((dot, dotIndex) => {
-            dot.classList.toggle('is-active', dotIndex === activeIndex);
-        });
-    };
-
-    slides.forEach((slide, index) => {
-        const image = slide.querySelector('img');
-
-        if (image) {
-            image.addEventListener('click', () => {
-                if (!galleryModal || !galleryModalImage) {
-                    return;
-                }
-
-                modalSlides = Array.from(slides).map((carouselSlide) => carouselSlide.querySelector('img'));
-                modalIndex = index;
-                galleryModal.hidden = false;
-                document.body.style.overflow = 'hidden';
-
-                const modalImage = modalSlides[modalIndex];
-                galleryModalImage.src = modalImage.src;
-                galleryModalImage.alt = modalImage.alt;
-            });
-        }
-    });
-
-    prevButton.addEventListener('click', () => {
-        renderSlide(activeIndex - 1);
-    });
-
-    nextButton.addEventListener('click', () => {
-        renderSlide(activeIndex + 1);
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            renderSlide(index);
-        });
-    });
-});
-
-const renderModalSlide = (direction) => {
-    if (!galleryModalImage || !modalSlides.length) {
-        return;
-    }
-
-    modalIndex = (direction + modalSlides.length) % modalSlides.length;
-    galleryModalImage.src = modalSlides[modalIndex].src;
-    galleryModalImage.alt = modalSlides[modalIndex].alt;
-};
-
-if (galleryModal && galleryModalImage && galleryModalPrev && galleryModalNext && galleryModalClose) {
-    galleryModalPrev.addEventListener('click', () => {
-        renderModalSlide(modalIndex - 1);
-    });
-
-    galleryModalNext.addEventListener('click', () => {
-        renderModalSlide(modalIndex + 1);
-    });
-
-    galleryModalClose.addEventListener('click', () => {
-        galleryModal.hidden = true;
-        document.body.style.overflow = '';
-    });
-
-    galleryModal.addEventListener('click', (event) => {
-        if (event.target === galleryModal) {
-            galleryModal.hidden = true;
-            document.body.style.overflow = '';
-        }
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (galleryModal.hidden) {
-            return;
-        }
-
-        if (event.key === 'Escape') {
-            galleryModal.hidden = true;
-            document.body.style.overflow = '';
-        }
-
-        if (event.key === 'ArrowLeft') {
-            renderModalSlide(modalIndex - 1);
-        }
-
-        if (event.key === 'ArrowRight') {
-            renderModalSlide(modalIndex + 1);
-        }
-    });
-}
-
 const compareCards = document.querySelectorAll('[data-compare]');
 
 compareCards.forEach((card) => {
@@ -182,3 +62,22 @@ compareCards.forEach((card) => {
     range.addEventListener('change', renderPosition);
     renderPosition();
 });
+
+// iOS Safari can ignore the first tap on links with target="_blank" (the hover
+// state or a menu re-render moves the element). On touch devices we therefore
+// navigate in the same tab, which always works; desktop keeps the new tab.
+const touchOnly = window.matchMedia('(hover: none)').matches;
+const externalLinks = document.querySelectorAll('.google-badge, .nav-social, .social-card');
+
+if (touchOnly) {
+    externalLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            if (event.defaultPrevented || !link.href) {
+                return;
+            }
+
+            event.preventDefault();
+            window.location.href = link.href;
+        });
+    });
+}
