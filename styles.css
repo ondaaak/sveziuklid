@@ -1144,6 +1144,28 @@ main {
         min-height: 0;
     }
 
+    /* Pořadí dlaždic na mobilu:
+       tlakové čištění → panely → střechy → hodinový manžel → sedací soupravy */
+    .hero-visual .visual-main {
+        order: 1;
+    }
+
+    .hero-visual .detail-fve {
+        order: 2;
+    }
+
+    .hero-visual .detail-roof {
+        order: 3;
+    }
+
+    .hero-visual .detail-handyman {
+        order: 4;
+    }
+
+    .hero-visual .detail-couch {
+        order: 5;
+    }
+
     .parallax-strip {
         min-height: 240px;
         background-attachment: scroll;
