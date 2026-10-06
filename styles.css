@@ -1432,7 +1432,16 @@ main {
    ══════════════════════════════════ */
 
 .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+}
+
+.gallery-grid > .ba-card,
+.gallery-grid > .gallery-tile {
+    flex: 0 1 calc((100% - 36px) / 3);
+    max-width: calc((100% - 36px) / 3);
 }
 
 .ba-card,
@@ -1558,10 +1567,22 @@ main {
     .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .gallery-grid > .ba-card,
+    .gallery-grid > .gallery-tile {
+        flex-basis: calc((100% - 18px) / 2);
+        max-width: calc((100% - 18px) / 2);
+    }
 }
 
 @media (max-width: 560px) {
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+
+    .gallery-grid > .ba-card,
+    .gallery-grid > .gallery-tile {
+        flex-basis: 100%;
+        max-width: 100%;
     }
 }
